@@ -17,10 +17,7 @@ require("dotenv").config();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000", // Local development URL
-      "https://blogapp-frontend-production.up.railway.app", // Production frontend URL
-    ],
+    origin: "http://localhost:3000",
     credentials: true, // Allow cookies to be sent with requests
   })
 );
