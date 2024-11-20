@@ -17,8 +17,13 @@ require("dotenv").config();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
-    credentials: true, // Allow cookies to be sent with requests
+    origin: [
+      "http://localhost:3000", 
+      "https://blogapp-frontend-production.up.railway.app"
+    ],
+    credentials: true, 
+    methods: ["GET", "POST", "PUT", "DELETE"], // Add methods if necessary
+    allowedHeaders: ["Content-Type", "Authorization"], // Add any specific headers if required
   })
 );
 
