@@ -17,10 +17,14 @@ require("dotenv").config();
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // Replace with your frontend URL
+    origin: [
+      "http://localhost:3000", // Local development URL
+      "https://blogapp-frontend-production.up.railway.app", // Production frontend URL
+    ],
     credentials: true, // Allow cookies to be sent with requests
   })
 );
+
 
 const secretKey = process.env.SECRET_KEY;
 
